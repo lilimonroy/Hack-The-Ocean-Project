@@ -1,10 +1,10 @@
 [
     {
       "option": "1",
-      "message":"1) Inserte 1 para continuar su denuncia desde nuetro sitio oficial:"
+      "message":"1) Inserte 1 para continuar su denuncia desde nuetro sitio oficial."
     },
     {
       "option": "2",
-      "message":"2) Inserte 2 para continuar su denuncia aquí mismo en Telegram:"
+      "message":"2) Inserte 2 para continuar su denuncia aquí mismo en Telegram."
     }
 ] 
