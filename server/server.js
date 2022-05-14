@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 // Inicia configuración e implementación del bot
 const bot = require("./lib/botExport");
-const ExplorerController = require("./lib/BotControllers/ExplorerController");
+// const ExplorerController = require("./lib/BotControllers/ExplorerController");
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -27,16 +27,26 @@ bot.on("message", (msg) => {
     const numberToApplyFb = parseInt(msg.text);
 
     if(!isNaN(numberToApplyFb)){
-        const fizzbuzzTrick = ExplorerController.getValidationScore(numberToApplyFb);
+        // const fizzbuzzTrick = ExplorerController.getValidationScore(numberToApplyFb);
         const responseBot = `Tu número es: ${numberToApplyFb}. Validación: ${fizzbuzzTrick}`;
         console.log(responseBot);
         bot.sendMessage(chatId, responseBot);
     } else if(isNaN(numberToApplyFb)){
+      const command = msg.text;
+      const commandAux = command.toLowerCase();
+      console.log(commandAux)
+      if(commandAux == "denunciar"){
         const mission =  msg.text;
-        const names = ExplorerController.getExplorersUsernamesByMission(mission);
-        const responseBot = `La misión es: ${msg.text}. Nombres: ${names}`;
+        // const names = ExplorerController.getExplorersUsernamesByMission(mission);
+        const responseBot = `tu comando es: ${commandAux}`;
         console.log(responseBot);
         bot.sendMessage(chatId, responseBot);
+      }else{
+        const responseBot = `introduzca un comando correcto`;
+        console.log(responseBot);
+        bot.sendMessage(chatId, responseBot);
+      }
+       
     }else{
         bot.sendMessage(chatId, "Envía un número válido");
     }
@@ -48,17 +58,17 @@ bot.on("message", (msg) => {
 //Termina configuración e implementación del bot
 
 // Require para usar Prisma
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+// const { PrismaClient } = require('@prisma/client');
+// const prisma = new PrismaClient();
 
 
 //CORS
 
-const cors = require("cors");
-const corsOptions = {
-  origin: "http://localhost:8081"
-}
-app.use(cors(corsOptions));
+// const cors = require("cors");
+// const corsOptions = {
+//   origin: "http://localhost:8081"
+// }
+// app.use(cors(corsOptions));
 
 
 
