@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 
 // Inicia configuración e implementación del bot
 const bot = require("./lib/botExport");
+const MessengerSTSea = require('./lib/BotUtils/MessengerSTSea');
 // const ExplorerController = require("./lib/BotControllers/ExplorerController");
 
 // Matches "/echo [whatever]"
@@ -37,8 +38,8 @@ bot.on("message", (msg) => {
       console.log(commandAux)
       if(commandAux == "denunciar"){
         const mission =  msg.text;
-        // const names = ExplorerController.getExplorersUsernamesByMission(mission);
-        const responseBot = `tu comando es: ${commandAux}`;
+        const message1st = MessengerSTSea.conversationStart();
+        const responseBot = message1st;
         console.log(responseBot);
         bot.sendMessage(chatId, responseBot);
       }else{
