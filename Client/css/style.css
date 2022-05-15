@@ -246,3 +246,29 @@ textarea{
 	margin-left: 300px;
 	box-shadow: 1px 7px 25px rgba(0,0,0,0.2);
 }
+/*Contacto*/
+.contacto{
+	width: 100%;
+	display: flex;
+	text-align: center;
+	
+}
+.contacto2{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	
+}
+.desarrollador{
+	background: #93D8FE;
+	margin: 50px;
+	width: 30%;
+	height: 200px;
+	border-radius: 3px;
+	box-shadow: 1px 7px 25px rgba(0,0,0,0.2);
+}
+img.user{
+	width: 80px;
+	
+}

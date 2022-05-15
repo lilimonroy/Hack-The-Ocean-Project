@@ -18,7 +18,7 @@ class MessengerSTSea{
         
         if(type == 1){
 
-            const message = 'Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio:\n\nhttps://drive.google.com/file/d/14BYxCOTqDQmRpQXstt2v0BRDUjA9VDdJ/view';
+            const message = 'Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio:\n\nhttps://gaiaandokeanos.netlify.app/';
             return message;
 
         }else{

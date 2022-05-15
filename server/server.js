@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3001;
+const cors = require("cors"); // Resolviendo problema de cors
 
 
 
@@ -104,11 +105,11 @@ const prisma = new PrismaClient();
 
 //CORS
 
-const cors = require("cors");
-const corsOptions = {
-  origin: "http://localhost:8081"
-}
-app.use(cors(corsOptions));
+// const cors = require("cors");
+// const corsOptions = {
+//   origin: "https://sparkling-rugelach-a85390.netlify.app/"
+// }
+app.use(cors());
 
 
 
@@ -141,7 +142,7 @@ app.post('/denuncias', async (req, res) => {
     detalles: req.body.detalles,
    };
   const message = 'Denuncia creada.';
-  await prisma.explorer.create({data: explorer});
+  await prisma.denunciations.create({data: Denunciations});
   return res.json({message});
 });
 
