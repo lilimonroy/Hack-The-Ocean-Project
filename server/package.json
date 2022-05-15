@@ -1,0 +1,33 @@
+{
+  "name": "api_express-db",
+  "version": "1.0.0",
+  "description": "API_Express-DB_conexion",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/jest",
+    "server": "node ./lib/server.js",
+    "bot": "node ./lib/bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieltorres519/API_Express-DB.git"
+  },
+  "author": "gabrieltorres519",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrieltorres519/API_Express-DB/issues"
+  },
+  "homepage": "https://github.com/gabrieltorres519/API_Express-DB#readme",
+  "devDependencies": {
+    "express": "^4.18.1",
+    "jest": "^28.1.0",
+    "prisma": "^3.13.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.13.0",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "node-telegram-bot-api": "^0.57.0"
+  }
+}

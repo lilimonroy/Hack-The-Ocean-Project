@@ -1,0 +1,14 @@
+[
+    {
+      "messagetype": "location",
+      "message":"Por favor, a conticuación inserte la localización del inicidente en formato 'Municipio, Estado':"
+    },
+    {
+      "messagetype": "description",
+      "message":"Describa el incidente de manera breve, use frases clave como 'Derrame de petróleo en la costa', 'Tira de plasticos en la playa', etc:"
+    },
+    {
+      "messagetype": "culprit",
+      "message":"¿Quénes estan involucrados en esta atentado al océano?, describa a los involucrados con frases como 'Empresa X', 'Grupo de personas', etc:"
+    }
+] 
