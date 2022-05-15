@@ -18,4 +18,14 @@ describe('Pruebas de unidad de la clase MessengerSTSea',()=>{
         expect(message).toBe("1) Inserte 1 para continuar su denuncia desde nuetro sitio oficial. | 2) Inserte 2 para continuar su denuncia aquí mismo en Telegram.")
     })
 
+    test('2) Envio de mensaje con el link del sitio',()=>{
+
+        const messageLink = MessengerSTSea.responseType(1);
+        const message2 = MessengerSTSea.responseType(2);
+
+
+        expect(messageLink).toBe('Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio: https://twitter.com/GabrielleTorri1')
+        expect(message2).not.toBeUndefined()
+    })
+
 })

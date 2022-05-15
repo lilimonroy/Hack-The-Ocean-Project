@@ -21,32 +21,63 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
     bot.sendMessage(chatId, resp);
 });
 
+
+
 // Listen for any kind of message. There are different kinds of
 // messages.
+
 bot.on("message", (msg) => {
-    const chatId = msg.chat.id;
-    const numberToApplyFb = parseInt(msg.text);
+
+          
+      
+      const chatId = msg.chat.id;
+      const numberToApplyFb = parseInt(msg.text);
+   
+    
 
     if(!isNaN(numberToApplyFb)){
-        // const fizzbuzzTrick = ExplorerController.getValidationScore(numberToApplyFb);
-        const responseBot = `Tu número es: ${numberToApplyFb}. Validación: ${fizzbuzzTrick}`;
-        console.log(responseBot);
-        bot.sendMessage(chatId, responseBot);
+
+      
+        if(numberToApplyFb == 1 || numberToApplyFb == 2){
+
+          const responseBot = MessengerSTSea.responseType(numberToApplyFb);
+          console.log(responseBot);
+          bot.sendMessage(chatId, responseBot);
+          
+        }else{
+          const responseBot = `Introduzca una opción correcta`;
+          console.log(responseBot);
+          bot.sendMessage(chatId, responseBot);
+        }
+        
+
     } else if(isNaN(numberToApplyFb)){
-      const command = msg.text;
-      const commandAux = command.toLowerCase();
-      console.log(commandAux)
-      if(commandAux == "denunciar"){
-        const mission =  msg.text;
-        const message1st = MessengerSTSea.conversationStart();
-        const responseBot = message1st;
-        console.log(responseBot);
-        bot.sendMessage(chatId, responseBot);
-      }else{
-        const responseBot = `introduzca un comando correcto`;
-        console.log(responseBot);
-        bot.sendMessage(chatId, responseBot);
-      }
+
+        const command = msg.text;
+        const commandAux = command.toLowerCase();
+        console.log(commandAux)
+
+        if(commandAux == "denunciar"){
+
+          const message1st = MessengerSTSea.conversationStart();
+          const responseBot = message1st;
+          console.log(responseBot);
+          bot.sendMessage(chatId, responseBot);
+
+        }else if(commandAux.startsWith("-")){
+
+          const forms = MessengerSTSea.divideContent(commandAux);
+          const responseBot = forms;
+          console.log(responseBot);
+          bot.sendMessage(chatId, responseBot);
+
+        }else{
+
+          const responseBot = `introduzca un comando correcto`;
+          console.log(responseBot);
+          bot.sendMessage(chatId, responseBot);
+
+        }
        
     }else{
         bot.sendMessage(chatId, "Envía un número válido");
