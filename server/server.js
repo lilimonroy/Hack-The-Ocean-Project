@@ -73,6 +73,12 @@ bot.on("message", (msg) => {
           console.log(responseBot);
           bot.sendMessage(chatId, responseBot);
 
+        }else if(commandAux == "/start"){
+
+          const responseBot = "[https://i.imgur.com/4asoRF3.png]\nBeinvenido a STOcean Denunciation!\n\nPara realizar tu denuncia ingresa el comando 'Denunciar'";
+          console.log(responseBot);
+          bot.sendMessage(chatId, responseBot);
+
         }else{
 
           const responseBot = `introduzca un comando correcto`;
