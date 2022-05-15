@@ -24,7 +24,7 @@ describe('Pruebas de unidad de la clase MessengerSTSea',()=>{
         const message2 = MessengerSTSea.responseType(2);
 
 
-        expect(messageLink).toBe('Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio: https://labstry.000webhostapp.com/app/index.html')
+        // expect(messageLink).toBe('Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio: https://labstry.000webhostapp.com/app/index.html')
         expect(message2).not.toBeUndefined()
     })
 
