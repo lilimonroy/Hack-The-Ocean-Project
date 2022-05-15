@@ -98,17 +98,17 @@ bot.on("message", (msg) => {
 //Termina configuración e implementación del bot
 
 // Require para usar Prisma
-// const { PrismaClient } = require('@prisma/client');
-// const prisma = new PrismaClient();
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 
 //CORS
 
-// const cors = require("cors");
-// const corsOptions = {
-//   origin: "http://localhost:8081"
-// }
-// app.use(cors(corsOptions));
+const cors = require("cors");
+const corsOptions = {
+  origin: "http://localhost:8081"
+}
+app.use(cors(corsOptions));
 
 
 
@@ -123,6 +123,27 @@ app.listen(port, () => {
 });
 
 
+app.get('/denuncias', async (req, res) => {
+  const allDenunciations =  await prisma.Denunciations.findMany({});
+  res.json(allDenunciations);
+});
+
+
+app.post('/denuncias', async (req, res) => {
+  const Denunciations = {
+    name: req.body.name,
+    email: req.body.email,
+    telefono: req.body.telefono,
+    domicilio: req.body.domicilio,
+    location: req.body.location,
+    description: req.body.description,
+    culprit: req.body.culprit,
+    detalles: req.body.detalles,
+   };
+  const message = 'Denuncia creada.';
+  await prisma.explorer.create({data: explorer});
+  return res.json({message});
+});
 
 
 
