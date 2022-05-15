@@ -8,7 +8,7 @@ class MessengerSTSea{
     static conversationStart(){
 
         const message = Reader.readJsonFile("options.json");
-        const jointedMessage = message[0].message + ' | ' + message[1].message;
+        const jointedMessage = '[https://i.imgur.com/mG0klxc.png] \n'+message[0].message + ' \n ' + message[1].message;
         
         return jointedMessage;
     }
@@ -18,7 +18,7 @@ class MessengerSTSea{
         
         if(type == 1){
 
-            const message = 'Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio: https://twitter.com/GabrielleTorri1';
+            const message = 'Por favor acceda al siguiente link para continuar su denuncia en nuestro sitio: https://drive.google.com/file/d/14BYxCOTqDQmRpQXstt2v0BRDUjA9VDdJ/view';
             return message;
 
         }else{

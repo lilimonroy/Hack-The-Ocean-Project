@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
+
+
 
 // Inicia configuración e implementación del bot
 const bot = require("./lib/botExport");
